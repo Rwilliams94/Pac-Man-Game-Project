@@ -202,6 +202,47 @@ let modeSet = 0
 
 
   btnMode.onclick = function() {
+
+   // !--------------------- Reset all ----------------------------!
+      
+     // stop clocks and movement
+        
+     newChronometer.stopClick();
+     clearInterval(intervalId);
+     clearInterval(intervalId1);
+     clearInterval(intervalId2);
+     clearInterval(intervalId3);
+     clearInterval(intervalId4);
+     btnStart.classList.toggle("no-click");
+ 
+     // resest time
+     
+     newChronometer.resetClick();
+     minDec.innerText = startMinDec;
+     minUni.innerText = startMinUni;
+     secDec.innerText = startSecDec;
+     secUni.innerText = startSecUni;
+     milDec.innerText = 0;
+     milUni.innerText = 0;
+     PM.points = 0;
+     Score.innerText = 0;
+         
+     // reset board, pills and grid.
+ 
+       resetPos();
+ 
+       let resetPill = document.getElementsByClassName("pill")
+         for (let i=0; i<resetPill.length; i++) {
+             resetPill[i].classList.remove("active");
+         }
+         
+       grid.splice(0,grid.length);
+       base.forEach(arr => grid.push([...arr]));
+ 
+       PM.pillCount = 0;
+
+      // !--------------------- Switch mode ----------------------------!
+
     if (modeSet === 0) {
       
       modeSet = 1;
@@ -334,7 +375,6 @@ let baseG3Y = g3.y
 let baseG4X = g4.x
 let baseG4Y = g4.y
 
-console.log(PM.life)
 
 const resetPos = function() {
  PacMan.style.gridRow = `${basePMX+1}/20`;
@@ -389,8 +429,10 @@ secUni.innerText = startSecUni;
 milDec.innerText = 0;
 milUni.innerText = 0;
 
-const baseGhostSpeed = 200;
+const basePlayerSpeed = 150;
+const baseGhostSpeed = 175;
 let ghostSpeed = baseGhostSpeed;
+let playerSpeed = basePlayerSpeed;
 
 
 
@@ -593,7 +635,7 @@ const moveForward = function () {
     }
     // console.log(PM.pillCount)
     // PM.route.push({x:PM.x, y:PM.y})
-  }, 175);
+  }, playerSpeed);
 };
 
 
@@ -1102,93 +1144,7 @@ const ghostHit = function () {
       break;
   }
 }
-
-//   if (g1.x===PM.x && g1.y===PM.y) {
-
-    
-     
-//     PM.points -= 500
-//     clearInterval(intervalId);
-//     clearInterval(intervalId1);
-//     clearInterval(intervalId2);
-//     clearInterval(intervalId3);
-//     clearInterval(intervalId4);
-//     resetPos();
-//     moveGhost();
-
-//     // for marathon mode
-
-//     if (modeSet === 1) {
-//       PM.life --
-//     }
-
-//     console.log(`hit! life left is ${PM.life}`)
-
-//   }
-
-//   if (g2.x===PM.x && g2.y===PM.y) {
-
-    
-     
-//     PM.points -= 500
-//     clearInterval(intervalId);
-//     clearInterval(intervalId1);
-//     clearInterval(intervalId2);
-//     clearInterval(intervalId3);
-//     clearInterval(intervalId4);
-//     resetPos();
-//     moveGhost();
-
-//     // for marathon mode
-
-//     if (modeSet === 1) {
-//       PM.life --
-//     }
-
-//     console.log(`hit! life left is ${PM.life}`)
-//   }
-
-// if (g3.x===PM.x && g3.y===PM.y) {
-//   console.log(`hit! life left is ${PM.life}`)
-     
-//     PM.points -= 500
-//     clearInterval(intervalId);
-//     clearInterval(intervalId1);
-//     clearInterval(intervalId2);
-//     clearInterval(intervalId3);
-//     clearInterval(intervalId4);
-//     resetPos();
-//     moveGhost();
-
-//     // for marathon mode
-
-//     if (modeSet === 1) {
-//       PM.life --
-//     }
-//     console.log(`hit! life left is ${PM.life}`)
-//   }
-
-// if (g4.x===PM.x && g4.y===PM.y) {
-
-//   console.log(`hit! life left is ${PM.life}`)
-     
-//     PM.points -= 500
-//     clearInterval(intervalId);
-//     clearInterval(intervalId1);
-//     clearInterval(intervalId2);
-//     clearInterval(intervalId3);
-//     clearInterval(intervalId4);
-//     resetPos();
-//     moveGhost();
-
-//     // for marathon mode
-
-//     if (modeSet === 1) {
-//       PM.life --
-//     }
-//     console.log(`hit! life left is ${PM.life}`)
-//   }
-  
+ 
   setStop()
 
 }
@@ -1519,15 +1475,79 @@ const moveGhostTut = function () {
 // ghost hit 
 
 const ghostHitTut = function () {
-  if (g1Tut.x === PMTut.x && g1Tut.y === PMTut.y) {
-    PMTut.points -= 100;
-    clearInterval(intervalIdTut);
-    clearInterval(intervalId2Tut);
-    resetPosTut();
-    moveGhostTut();
-  }
-};
 
+  switch (PMTut.direction) {
+    
+    case "U":
+
+      if ((PMTut.x+" "+PMTut.y) === (g1Tut.x+" "+g1Tut.y) || (PMTut.x+1+" "+PMTut.y) === (g1Tut.x+" "+g1Tut.y) ){
+          
+        PMTut.points -= 200
+
+        clearInterval(intervalIdTut);
+        clearInterval(intervalId2Tut);
+        
+        resetPosTut();
+        moveGhostTut();
+
+          
+      }
+
+      break;
+
+    case "R":
+
+      if ((PMTut.x+" "+PMTut.y) === (g1Tut.x+" "+g1Tut.y) || (PMTut.x+" "+PMTut.y-1) === (g1Tut.x+" "+g1Tut.y) ) {
+        
+        PMTut.points -= 200
+
+        clearInterval(intervalIdTut);
+        clearInterval(intervalId2Tut);
+        
+        resetPosTut();
+        moveGhostTut();
+
+      
+      }
+
+      break;
+
+    case "D":
+
+      if ((PMTut.x+" "+PMTut.y) === (g1Tut.x+" "+g1Tut.y) || (PMTut.x-1+" "+PMTut.y) === (g1Tut.x+" "+g1Tut.y)) {
+        
+        PMTut.points -= 200
+
+        clearInterval(intervalIdTut);
+        clearInterval(intervalId2Tut);
+        
+        resetPosTut();
+        moveGhostTut();
+
+   
+      }
+
+      break;
+
+    case "L":
+      if ((PMTut.x+" "+PMTut.y) === (g1Tut.x+" "+g1Tut.y) ||  (PMTut.x+" "+PMTut.y+1) === (g1Tut.x+" "+g1Tut.y)) {
+      
+        
+        PMTut.points -= 200
+
+        clearInterval(intervalIdTut);
+        clearInterval(intervalId2Tut);
+        
+        resetPosTut();
+        moveGhostTut();
+
+      }
+
+      break;
+
+  }
+
+}
 
 // !---------------------=------------------- Code Graveyard -----------------------------------------------------------! 
   
