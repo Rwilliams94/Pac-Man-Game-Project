@@ -1,0 +1,1661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    
+</head>
+<body>
+
+    <h1 id="title">PAC-MAN</h1>
+    <section id="score-timer">
+
+        <div id="clock">
+            <div id="sphere">
+                <span id="minDec" class="number">0</span><span id="minUni" class="number">0</span><span>:</span
+                ><span id="secDec" class="number">0</span><span id="secUni" class="number">0</span>:<span id="milDec">0</span><span id="milUni">0</span>
+            </div>
+        </div>
+    </section>
+    <section id="grid">
+
+        <div id="PM" class="Pac-man"></div>
+        <div id="ghost1" class="ghost">1</div>
+        <div id="ghost2" class="ghost">2</div>
+        <div id="ghost3" class="ghost">3</div>
+        <div id="ghost4" class="ghost">4</div>
+    
+        <!-- row 0 -->
+
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        
+
+        <!-- row 1 -->
+
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p1-1" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p1-2" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p1-3" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p1-4" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p1-9" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p1-10" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p1-11" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p1-12" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p1-13" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p1-14" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p1-15" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p1-16" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p1-17" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p1-18" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p1-19" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p1-20" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p1-21" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p1-22" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p1-23" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p1-24" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p1-25" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p1-26" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p1-27" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p1-28" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p1-29" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p1-30" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p1-31" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p1-32" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p1-33" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p1-34" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p1-35" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p1-36" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p1-37" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+       
+
+        <!-- row 2 -->
+
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p2-1" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p2-4" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p2-9" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>      
+        <div class="grid-cell">
+            <div id="p2-13" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p2-15" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+         <div class="grid-cell">
+            <div id="p2-17" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p2-19" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+         <div class="grid-cell">
+            <div id="p2-21" class="pill"></div>
+         </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p2-25" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p2-31" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p2-37" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+       
+
+        <!-- row 3 -->
+
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p3-1" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p3-4" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p3-5" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p3-6" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p3-7" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p3-8" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p3-9" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p3-11"></div>
+        </div>
+        <div class="grid-wall"></div>      
+        <div class="grid-cell">
+            <div id="p3-13" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p3-15" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+         <div class="grid-cell">
+            <div id="p3-17" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p3-19" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+         <div class="grid-cell">
+            <div id="p3-21" class="pill"></div>
+         </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p3-25" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p3-27" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p3-28" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p3-29" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p3-30" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p3-31" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p3-37" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+     
+
+
+        <!-- row 4 -->
+
+        
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p4-1" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p4-4" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p4-9" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p4-11"></div>
+        </div>
+        <div class="grid-wall"></div>      
+        <div class="grid-cell">
+            <div id="p4-13" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p4-15" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+         <div class="grid-cell">
+            <div id="p4-17" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p4-19" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+         <div class="grid-cell">
+            <div id="p4-21" class="pill"></div>
+         </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p4-25" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p4-27" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p4-31" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p4-32" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p4-33" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p4-34" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p4-35" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p4-36" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p4-37" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+       
+
+        <!-- row 5 -->
+
+   
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p5-1" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p5-4" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p5-9" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p5-11"></div>
+        </div>
+        <div class="grid-wall"></div>      
+        <div class="grid-cell">
+            <div id="p5-13" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p5-15" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+         <div class="grid-cell">
+            <div id="p5-17" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p5-19" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+         <div class="grid-cell">
+            <div id="p5-21" class="pill"></div>
+         </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p5-25" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p5-27" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p5-31" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p5-33" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p5-35" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p5-37" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+       
+
+
+        <!-- row 6 -->
+
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p6-1" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p6-4" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p6-6" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p6-7" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p6-8" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p6-9" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p6-11"></div>
+        </div>
+        <div class="grid-wall"></div>      
+        <div class="grid-cell">
+            <div id="p6-13" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p6-15" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+         <div class="grid-cell">
+            <div id="p6-17" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p6-19" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+         <div class="grid-cell">
+            <div id="p6-21" class="pill"></div>
+         </div>
+         <div class="grid-cell">
+            <div id="p6-22" class="pill"></div>
+         </div>
+         <div class="grid-cell">
+            <div id="p6-23" class="pill"></div>
+         </div>
+         <div class="grid-cell">
+            <div id="p6-24" class="pill"></div>
+         </div>
+        <div class="grid-cell">
+            <div id="p6-25" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p6-27" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p6-31" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p6-33" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p6-35" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p6-37" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+       
+
+        <!-- row 7 -->
+
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p7-1" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p7-4" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p7-6" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p7-9" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p7-11"></div>
+        </div>
+        <div class="grid-wall"></div>      
+        <div class="grid-cell">
+            <div id="p7-13" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p7-15" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p7-17" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p7-18" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p7-19" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+         <div class="grid-cell">
+            <div id="p7-21" class="pill"></div>
+         </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p7-25" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p7-27" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p7-31" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p7-33" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p7-35" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p7-37" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+      
+        
+
+
+
+        <!-- row 8 -->
+        
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p8-1" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p8-4" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p8-6" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p8-9" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>      
+        <div class="grid-cell">
+            <div id="p8-13" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p8-15" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+         <div class="grid-cell">
+            <div id="p8-21" class="pill"></div>
+         </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p8-23"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p8-25" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p8-27" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p8-31" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p8-33" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p8-34" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p8-36" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p8-37" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+      
+        
+        
+        <!-- row 9 -->
+
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p9-1" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p9-4" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p9-6" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p9-9" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p9-10" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p9-11" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p9-12" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p9-13" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p9-14" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p9-15" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p9-17" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p9-18" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p9-19"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p9-21" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p9-23"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p9-25" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p9-27" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p9-31" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p9-33" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p9-35" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p9-36" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        
+        
+
+        <!-- row 10 -->
+
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p10-1" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p10-4" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p10-6" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p10-11" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p10-15" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p10-17" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p10-19" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p10-21" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p10-25" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p10-27" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p10-28" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p10-29" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p10-30" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p10-31" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p10-34" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p10-35" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+    
+        
+        <!-- row 11 -->
+
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p11-1" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p11-4" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p11-6" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p11-11" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p11-13" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p11-15" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p11-17" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p11-19" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p11-21" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p11-23" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p11-25" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p11-31" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p11-33" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p11-35" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p11-36" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+       
+
+        <!-- row 12 -->
+
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p12-1" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p12-4" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p12-6" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p12-11" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p12-13" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p12-15" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p12-17" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p12-19" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p12-21" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p12-23" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p12-25" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p12-26" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p12-27" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p12-28" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p12-29" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p12-30" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p12-31" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p12-33" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p12-34" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p12-36" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p12-37" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+      
+
+        <!-- row 13 -->
+
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p13-1" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p13-4" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p13-6" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p13-11" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p13-13" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p13-15" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p13-17" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p13-19" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p13-21" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p13-23" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p13-25" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p13-31" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p13-33" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p13-35" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p13-37" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+       
+
+        <!-- row 14 -->
+
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p14-1" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p14-4" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p14-5" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p14-6" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p14-7" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p14-8" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p14-9" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p14-10" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p14-11" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p14-13" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p14-15" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p14-17" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p14-19" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p14-21" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p14-23" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p14-25" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p14-26" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p14-27" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p14-28" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p14-29" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p14-30" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p14-31" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p14-33" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p14-35" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p14-37" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+      
+
+        <!-- row 15 -->
+
+        
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p15-1" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p15-4" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p15-11" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p15-13" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p15-15" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p15-17" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p15-19" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p15-21" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p15-23" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p15-25" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p15-31" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p15-33" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p15-35" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p15-37" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+       
+        
+        <!-- row 16 -->
+
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p16-1" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p16-2" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p16-3" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p16-4" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p16-5" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p16-6" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p16-7" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p16-8" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p16-9" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p16-10" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p16-11" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p16-12" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p16-13" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p16-14" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p16-15" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p16-16" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p16-17" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p16-18" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p16-19" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p16-20" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p16-21" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p16-22" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p16-23" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p16-24" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p16-25" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p16-26" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p16-27" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p16-28" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p16-29" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p16-30" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p16-31" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p16-32" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p16-33" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p16-34" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p16-35" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p16-36" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p16-37" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+       
+
+    <!-- row 17 -->
+
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p17-1" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p17-9" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p17-15" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p17-25" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p17-37" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+  
+
+        <!-- row 18 -->
+
+        <div class="grid-wall"></div>
+        <div class="grid-cell">
+            <div id="p18-1" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p18-2" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p18-3" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p18-4" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p18-5" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p18-6" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p18-7" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p18-8" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p18-9" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p18-10" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p18-11" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p18-12" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p18-13" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p18-14" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p18-15" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p18-16" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p18-17" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p18-18" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p18-19" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p18-20" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p18-21" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p18-22" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p18-23" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p18-24" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p18-25" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p18-26" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p18-27" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p18-28" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p18-29" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p18-30" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p18-31" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p18-32" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p18-33" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p18-34" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p18-35" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p18-36" class="pill"></div>
+        </div>
+        <div class="grid-cell">
+            <div id="p18-37" class="pill"></div>
+        </div>
+        <div class="grid-wall"></div>
+        
+
+        <!-- row 19 -->
+
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        <div class="grid-wall"></div>
+        
+
+    </section>
+
+    <section id="buttons">
+        
+        <h2 id="score-head">Score: <span id="score">00</span></h2>
+        
+
+        <div id="controls">
+
+            <div class="arrow-box-left">
+                <div class="left"></div>
+            </div>
+            <div class="arrow-box-right">
+                <div class="right"></div>
+            </div>
+            <div class="box-joystick">
+                <div id="joystick" class=""></div>
+                <div id="stick"></div>
+            </div>
+            <div class="arrow-box-up">
+                <div class="up"></div>
+            </div>
+            <div class="arrow-box-down">
+                <div class="down"></div>
+            </div>
+        </div>
+        <div id="button-panel">
+            
+            <div id="tut" class="bbox">
+            <div class="button-outer">
+                <button id="tutorial" class="btn"></button>
+            </div>
+            <h2>TUTORIAL</h2>
+            </div>
+
+            <div id="sta" class="bbox">
+            <div class="button-outer">
+                <button id="start" class="btn "></button>
+            </div>
+            <h2>START</h2>
+            </div>
+
+        </div>
+
+    </section>
+   
+    <script type="module" src="./movement.js"></script>
+</body>
+</html>
