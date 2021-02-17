@@ -7,7 +7,7 @@ body {
 
 }
 
-#grid {
+#gridTut {
     height: 500px;
     width: 500px;
     display: grid;
@@ -33,7 +33,7 @@ body {
     width: 50px;
 }
 
-.pill {
+.pillTut {
     background: white;
     height: 5px;
     width: 5px;
@@ -41,11 +41,11 @@ body {
 
 }
 
-.pill.active {
+.pillTut.active {
     display: none;
 }
 
-#PM {
+#PMTut {
     background: yellow;
     height: 40px;
     width: 40px;
@@ -56,7 +56,7 @@ body {
 
 
 
-#ghost1 {
+#ghostTut {
     background: green;
     height: 40px;
     width: 40px;

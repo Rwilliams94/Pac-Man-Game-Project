@@ -13,6 +13,20 @@ body {
 
 }
 
+
+/* title board */
+
+#title-box {
+    display: flex;
+    width: 600px;
+    justify-content: space-evenly;
+
+}
+
+h1.mode {
+    display: none;
+}
+
 /* score and timers */
 
 #score-timer {
@@ -30,6 +44,11 @@ body {
     justify-content: center;
     font-size: 30px;
 }
+
+#clock.mode {
+    display: none;
+}
+
 
 
 
@@ -52,6 +71,11 @@ body {
     width: 21px;
 }
 
+.grid-wall.mode {
+    background: darkgrey;
+    border: 2px solid darkslategrey;
+}
+
 .grid-cell {
     display: flex;
     align-items: center;
@@ -62,6 +86,9 @@ body {
     width: 25px;
 }
 
+.grid-cell.mode {
+    background: darkblue;
+}
 
 /* Characters */
 
@@ -80,8 +107,8 @@ body {
 
 #PM {
     background: yellow;
-    height: 30px;
-    width: 30px;
+    height: 25px;
+    width: 25px;
     border-radius: 50%;
     position: absolute;
     z-index: 1;
@@ -89,8 +116,8 @@ body {
 
 .ghost {
     background: green;
-    height: 20px;
-    width: 20px;
+    height: 25px;
+    width: 25px;
     border-radius: 20%;
     position: absolute;
     z-index: 1;
@@ -100,7 +127,7 @@ body {
 
 /* buttons */
 
-#score-head {
+.score-head {
     
     display: flex;
     flex-direction: column;
@@ -158,7 +185,15 @@ body {
     outline: none;
 }
 
-.pressed {
+
+
+
+
+.btn:hover {
+    background: rgb(179, 18, 50);
+}
+
+.btn:active {
     width: 70px;
     height: 70px;
     border-radius: 50%;
@@ -171,6 +206,20 @@ body {
 
 }
 
+.btn.mode {
+    background: gold;
+    border-color: goldenrod;
+}
+
+.btn.mode:hover {
+    background: rgb(177, 132, 18);
+}
+
+.btn.mode:active {
+    background: gold;
+    border-color: goldenrod;
+}
+
 .button-outer {
     display: flex;
     align-items: center;
@@ -180,6 +229,10 @@ body {
     border-radius: 50%;
     background:rgb(230, 52, 88);
 
+}
+
+.button-outer.mode {
+    background: rgb(252, 219, 34);
 }
 
 
@@ -223,6 +276,10 @@ body {
     
 }
 
+.left.mode {
+    border-right-color: gold;
+}
+
 .arrow-box-right {
     grid-column: 3/3;
     grid-row: 2/3;
@@ -245,6 +302,11 @@ body {
     
 }
 
+.right.mode {
+    border-left-color: gold;
+}
+
+
 .arrow-box-up {
     grid-column: 2/3;
     grid-row: 1/3;
@@ -265,6 +327,11 @@ body {
     border-bottom: 40px solid rgb(211, 23, 60);
     margin-bottom: 20px;
 }
+
+.up.mode {
+    border-bottom-color: gold;
+}
+
 
 .box-joystick {
     grid-column: 2/3;
@@ -296,6 +363,11 @@ body {
     margin-top: 20px;
 }
 
+.down.mode {
+    border-top-color: gold;
+}
+
+
     
 
 /* joystick */
@@ -313,6 +385,14 @@ body {
     z-index: 1;
     
 
+}
+
+#joystick.mode {
+    background: gold;
+    box-shadow:
+    0px 0px 0px 10px rgb(240, 188, 58),
+    0px 0px 0px 20px rgb(233, 177, 34),
+    0px 0px 0px 30px goldenrod;
 }
 
 .left-side {
@@ -340,4 +420,187 @@ body {
     z-index: 0.5;
 }
 
+/* Game Over */
 
+.popup {
+    display: flex;
+
+}
+
+
+
+.popup .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: darkblue;
+    width: 550px;
+    height: 320px;
+    z-index: 3;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.popup .try-again {
+   
+    width: 510px;
+    height: 30px;
+    bottom: 10px;
+    background: black;
+    color: white;
+    text-align: center;
+}
+
+
+
+
+.popup.active .content {
+    transition: all 300ms ease-in-out;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+
+
+/* Tutorial */
+
+#tutorial {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#grid-tut {
+    height: 400px;
+    width: 400px;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    border: 1px solid black;
+    position: relative;
+}
+
+.grid-wall-tut {
+    background: black;
+    height: 40px;
+    width: 40px;
+}
+
+.grid-cell-tut {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: darkblue;
+    position: relative;
+    height: 40px;
+    width: 40px;
+}
+
+.pillTut {
+    background: white;
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+
+}
+
+.pillTut.active {
+    display: none;
+}
+
+#PMTut {
+    background: yellow;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+}
+
+
+
+#ghostTut {
+    background: green;
+    height: 40px;
+    width: 40px;
+    border-radius: 20%;
+    position: absolute;
+    z-index: 1;
+}
+
+
+#buttons {
+    margin: 20px;
+}
+
+.btn.no-click {
+    pointer-events: none;
+}
+
+.popup-tut .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: black;
+    border: 5px solid blue;
+    width: 800px;
+    height: 850px;
+    z-index: 3;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.popup-tut .grid {
+    position: absolute;
+    left: 170px ;
+}
+
+
+.popup-tut .try-again {
+   
+    width: 510px;
+    height: 30px;
+    bottom: 10px;
+    background: black;
+    color: white;
+    text-align: center;
+}
+
+
+
+
+.popup-tut.active .content {
+    transition: all 300ms ease-in-out;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+#buttons-tut {
+    margin: 20px;
+    height: 200px;
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-left: 175px;
+    margin-right: 50px;
+    
+
+}
+
+.score-head-tut {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+    font-size: 30px;
+}
+
+
+#scoreTut {
+    margin: 0;
+}

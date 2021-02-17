@@ -1,109 +1,108 @@
-// PACMAN MOVEMENT
+// // PacMan MOVEMENT
 
-// !----------------------------------------- Creating the clock ---------------------------------------------!
+// // !----------------------------------------- Creating the clock ---------------------------------------------!
 
-export class Chronometer {
-  constructor() {
-    this.currentTime = 6000;
-    this.intervalId = 0;
-  }
-  startClick(callback, stop) {
-    const intervalId = setInterval(() => {
-      this.currentTime --;
-      callback();
-      stop()
-    },10);
-    this.intervalId = intervalId;
-   }
+// class Chronometer {
+//   constructor() {
+//     this.currentTime = 6000;
+//     this.intervalId = 0;
+//   }
+//   startClick(callback, stop) {
+//     const intervalId = setInterval(() => {
+//       this.currentTime --;
+//       callback();
+//       stop()
+//     },10);
+//     this.intervalId = intervalId;
+//    }
   
-  getMinutes() {
-     let minutes = this.currentTime / 6000; 
-     return Math.floor(minutes);
-  }
+//   getMinutes() {
+//      let minutes = this.currentTime / 6000; 
+//      return Math.floor(minutes);
+//   }
 
-  getSeconds() {
-    let seconds = (this.currentTime % 6000)/100;
-    return Math.floor(seconds);
-  }
+//   getSeconds() {
+//     let seconds = (this.currentTime % 6000)/100;
+//     return Math.floor(seconds);
+//   }
 
-  getMilliseconds() {
-    let milliseconds = this.currentTime % 100;
-    return milliseconds;
-  }
+//   getMilliseconds() {
+//     let milliseconds = this.currentTime % 100;
+//     return milliseconds;
+//   }
 
-  twoDigitsNumber(num) {
-    if (num < 10) {
-      return `0${num.toString()}`;
-    } else {
-      return num.toString();
-    }
-  }
+//   twoDigitsNumber(num) {
+//     if (num < 10) {
+//       return `0${num.toString()}`;
+//     } else {
+//       return num.toString();
+//     }
+//   }
 
-  stopClick() {
-    if (this.currentTime === 0) clearInterval(this.intervalId);
-  }
+//   stopClick() {
+//     if (this.currentTime === 0) clearInterval(this.intervalId);
+//   }
 
-  resetClick() {
-    this.currentTime =1000;
-  }
+//   resetClick() {
+//     this.currentTime =1000;
+//   }
  
-}
+// }
 
 
-// !----------------------------- Printing the time!! ----------------------------------------------!
+// // !----------------------------- Printing the time!! ----------------------------------------------!
 
-const newChronometer = new Chronometer();
+// const newChronometer = new Chronometer();
 
-// get the buttons:
-
-
-
-// get the DOM elements that will serve us to display the time:
-let minDec = document.getElementById("minDec");
-let minUni = document.getElementById("minUni");
-let secDec = document.getElementById("secDec");
-let secUni = document.getElementById("secUni");
-let milDec = document.getElementById("milDec");
-let milUni = document.getElementById("milUni");
+// // get the buttons:
 
 
-function printTime() {
-  ghostHit()
-  Score.innerText = PM.points
-  printSeconds();
-  printMinutes();
-  printMilliseconds();
-}
 
-function printMinutes() {
-  // ... your code goes here
+// // get the DOM elements that will serve us to display the time:
+// let minDec = document.getElementById("minDec");
+// let minUni = document.getElementById("minUni");
+// let secDec = document.getElementById("secDec");
+// let secUni = document.getElementById("secUni");
+// let milDec = document.getElementById("milDec");
+// let milUni = document.getElementById("milUni");
 
-  let mins = newChronometer
-    .twoDigitsNumber(newChronometer.getMinutes())
-    .split("");
-  minDec.innerText = mins[0];
-  minUni.innerText = mins[1];
-}
 
-function printSeconds() {
-  // ... your code goes here
-  let secs = newChronometer
-    .twoDigitsNumber(newChronometer.getSeconds())
-    .split("");
+// function printTime() {
+ 
+//   printSeconds();
+//   printMinutes();
+//   printMilliseconds();
+// }
 
-  secDec.innerText = secs[0];
-  secUni.innerText = secs[1];
-}
+// function printMinutes() {
+//   // ... your code goes here
 
-// ==> BONUS
-function printMilliseconds() {
-  // ... your code goes here
-  let mSecs = newChronometer
-    .twoDigitsNumber(newChronometer.getMilliseconds())
-    .split("");
-  milDec.innerText = mSecs[0];
-  milUni.innerText = mSecs[1];
-}
+//   let mins = newChronometer
+//     .twoDigitsNumber(newChronometer.getMinutes())
+//     .split("");
+//   minDec.innerText = mins[0];
+//   minUni.innerText = mins[1];
+// }
+
+// function printSeconds() {
+//   // ... your code goes here
+//   let secs = newChronometer
+//     .twoDigitsNumber(newChronometer.getSeconds())
+//     .split("");
+
+//   secDec.innerText = secs[0];
+//   secUni.innerText = secs[1];
+// }
+
+// // ==> BONUS
+// function printMilliseconds() {
+//   // ... your code goes here
+//   let mSecs = newChronometer
+//     .twoDigitsNumber(newChronometer.getMilliseconds())
+//     .split("");
+//   milDec.innerText = mSecs[0];
+//   milUni.innerText = mSecs[1];
+// }
 
 
 // !----------------------------  1. creation of the character. -------------------------------------------!
@@ -125,14 +124,14 @@ class Character {
  
 }
 
-const PM = new Character("PacMan", 1, 4);
-const g1 = new Character("ghost1", 8, 8);
+const PMTut = new Character("PacMan", 1, 4);
+const g1Tut = new Character("ghost1", 8, 8);
 
 
 
 // 1a. grid.
 
-const base = [
+const baseTut = [
     ['O','O','O','O','O','O','O','O','O','O'],
     ['O','.','.','.',' ','.','.','.','.','O'],
     ['O','.','O','O','O','O','O','O','.','O'],
@@ -145,8 +144,8 @@ const base = [
     ['O','O','O','O','O','O','O','O','O','O']
   ]
 
-let grid = [];
-base.forEach(arr => grid.push([...arr]))
+let gridTut = [];
+baseTut.forEach(arr => grid.push([...arr]))
 
   
 
@@ -155,29 +154,29 @@ base.forEach(arr => grid.push([...arr]))
 // 1.b set all the element links
 
 
-  const PacMan = document.getElementById("PM");
-  const ghost1 = document.getElementById("ghost1")
-  const Score = document.getElementById("score");
-  const btnStart = document.getElementById("start")
-  let intervalId = 0;
-  let intervalId2 = 0;
+  const PacManTut = document.getElementById("PMTut");
+  const ghostTut = document.getElementById("ghostTut")
+  const ScoreTut = document.getElementById("scoreTut");
+  const btnStartTut = document.getElementById("startTut")
+  let intervalIdTut = 0;
+  let intervalId2Tut = 0;
   
 
 // 1.c set the starting postions.
 
-let basePMX = PM.x
-let basePMY = PM.y
+let basePMTutX = PMTut.x
+let basePMTutY = PMTut.y
 
-let baseG1X = g1.x
-let baseG1Y = g1.y
+let baseg1TutX = g1Tut.x
+let baseg1TutY = g1Tut.y
 
 
-PacMan.style.gridRow = `${basePMX+1}/10`;
-PacMan.style.gridColumn = `${basePMY+1}/10`;
+PacManTut.style.gridRow = `${basePMX+1}/10`;
+PacManTut.style.gridColumn = `${basePMY+1}/10`;
 
-ghost1.style.gridRow = `${baseG1X+1}/10`;
-ghost1.style.gridColumn = `${baseG1Y+1}/10`;
-g1.direction = "U"
+ghost1.style.gridRow = `${baseg1TutX+1}/10`;
+ghost1.style.gridColumn = `${baseg1TutY+1}/10`;
+g1Tut.direction = "U"
 
 
 
@@ -188,15 +187,15 @@ g1.direction = "U"
 
 document.addEventListener('keydown', function(e) {
     
-    if (btnStart.classList.contains("no-click")) {
+    if (btnStartTut.classList.contains("no-click")) {
         
         switch (e.key) {
             case "ArrowLeft":
                 
-      if (grid[PM.x][PM.y-1]!=='O') {
+      if (grid[PMTut.x][PMTut.y-1]!=='O') {
           clearInterval(intervalId)
-          PM.direction = "L";
-          console.log(PM.direction);
+          PMTut.direction = "L";
+          console.log(PMTut.direction);
           moveForward()
           
         };
@@ -204,30 +203,30 @@ document.addEventListener('keydown', function(e) {
     
     case "ArrowUp":
         
-        if (grid[PM.x-1][PM.y]!=='O') {
+        if (grid[PMTut.x-1][PMTut.y]!=='O') {
             clearInterval(intervalId)
-            PM.direction = "U";
-            console.log(PM.direction);
+            PMTut.direction = "U";
+            console.log(PMTut.direction);
             moveForward()
         };
         break;
         
         case "ArrowRight":
             
-      if (grid[PM.x][PM.y+1]!=='O') {
+      if (grid[PMTut.x][PMTut.y+1]!=='O') {
         clearInterval(intervalId)
-        PM.direction = "R";
-        console.log(PM.direction);
+        PMTut.direction = "R";
+        console.log(PMTut.direction);
         moveForward()
     };
       break;
 
       case "ArrowDown":
           
-      if (grid[PM.x+1][PM.y]!=='O') { 
+      if (grid[PMTut.x+1][PMTut.y]!=='O') { 
           clearInterval(intervalId)
-          PM.direction = "D";
-          console.log(PM.direction);
+          PMTut.direction = "D";
+          console.log(PMTut.direction);
           moveForward()
         };
         break;
@@ -250,17 +249,17 @@ const moveForward = function () {
 
     
 
-    switch (PM.direction) {
+    switch (PMTut.direction) {
       case "U":
-        if (PM.x === 0) {
+        if (PMTut.x === 0) {
           clearInterval(intervalId);
-        } else if (grid[PM.x - 1][PM.y] === "O") {
+        } else if (grid[PMTut.x - 1][PMTut.y] === "O") {
           clearInterval(intervalId);
-        } else if (grid[PM.x - 1][PM.y] === "V") {
+        } else if (grid[PMTut.x - 1][PMTut.y] === "V") {
           clearInterval(intervalId);
         } else {
-          PM.x--;
-          PacMan.style.gridRow = `${PM.x + 1}/10`;
+          PMTut.x--;
+          PacManTut.style.gridRow = `${PMTut.x + 1}/10`;
 
           
           removePill();
@@ -271,15 +270,15 @@ const moveForward = function () {
         break;
 
       case "R":
-        if (PM.y === grid[0].length - 1) {
+        if (PMTut.y === grid[0].length - 1) {
           clearInterval(intervalId);
-        } else if (grid[PM.x][PM.y + 1] === "O") {
+        } else if (grid[PMTut.x][PMTut.y + 1] === "O") {
           clearInterval(intervalId);
-        } else if (grid[PM.x][PM.y + 1] === "V") {
+        } else if (grid[PMTut.x][PMTut.y + 1] === "V") {
           clearInterval(intervalId);
         } else {
-          PM.y++;
-          PacMan.style.gridColumn = `${PM.y + 1}/10`;
+          PMTut.y++;
+          PacManTut.style.gridColumn = `${PMTut.y + 1}/10`;
 
           
           removePill();
@@ -290,15 +289,15 @@ const moveForward = function () {
         break;
 
       case "D":
-        if (PM.x === grid.length - 1) {
+        if (PMTut.x === grid.length - 1) {
           clearInterval(intervalId);
-        } else if (grid[PM.x + 1][PM.y] === "O") {
+        } else if (grid[PMTut.x + 1][PMTut.y] === "O") {
           clearInterval(intervalId);
-        } else if (grid[PM.x + 1][PM.y] === "V") {
+        } else if (grid[PMTut.x + 1][PMTut.y] === "V") {
           clearInterval(intervalId);
         } else {
-          PM.x++;
-          PacMan.style.gridRow = `${PM.x + 1}/10`;
+          PMTut.x++;
+          PacManTut.style.gridRow = `${PMTut.x + 1}/10`;
 
           
           removePill();
@@ -309,14 +308,14 @@ const moveForward = function () {
         break;
 
       case "L":
-        if (PM.y === 0) {
-        } else if (grid[PM.x][PM.y - 1] === "O") {
+        if (PMTut.y === 0) {
+        } else if (grid[PMTut.x][PMTut.y - 1] === "O") {
           clearInterval(intervalId);
-        } else if (grid[PM.x][PM.y - 1] === "V") {
+        } else if (grid[PMTut.x][PMTut.y - 1] === "V") {
           clearInterval(intervalId);
         } else {
-          PM.y--;
-          PacMan.style.gridColumn = `${PM.y + 1}/10`;
+          PMTut.y--;
+          PacManTut.style.gridColumn = `${PMTut.y + 1}/10`;
           
           
           removePill();
@@ -326,8 +325,8 @@ const moveForward = function () {
         }
         break;
     }
-    // console.log(PM.pillCount)
-    // PM.route.push({x:PM.x, y:PM.y})
+    // console.log(PMTut.pillCount)
+    // PMTut.route.push({x:PMTut.x, y:PMTut.y})
   }, 175);
 };
 
@@ -336,10 +335,10 @@ const moveForward = function () {
 // !---------------------------------- 4. update the score each time ---------------------------------------!
 
 const scorePoints = function() {
-    if (grid[PM.x][PM.y]==='.') {
-    PM.points += 10;
-    PM.pillCount ++;
-    grid[PM.x][PM.y] = ' ';
+    if (grid[PMTut.x][PMTut.y]==='.') {
+    PMTut.points += 10;
+    PMTut.pillCount ++;
+    grid[PMTut.x][PMTut.y] = ' ';
     
     };
 }
@@ -348,7 +347,7 @@ const scorePoints = function() {
 
 const removePill = function() {
 
-  let square = document.getElementById(`p${PM.x}-${PM.y}`)
+  let square = document.getElementById(`p${PMTut.x}-${PMTut.y}`)
   square.classList.add("active")
   
 
@@ -360,22 +359,22 @@ const removePill = function() {
 
 
 const roundOver = function() {
-    if (PM.pillCount===27) {
+    if (PMTut.pillCount===27) {
       
         clearInterval(intervalId);
 
-        PacMan.style.gridRow = `${basePMX+1}/10`
-        PacMan.style.gridColumn = `${basePMY+1}/10`
+        PacManTut.style.gridRow = `${basePMX+1}/10`
+        PacManTut.style.gridColumn = `${basePMY+1}/10`
 
-        PM.x = basePMX;
-        PM.y = basePMY;
+        PMTut.x = basePMX;
+        PMTut.y = basePMY;
 
-        ghost1.style.gridRow = `${baseG1X+1}/10`;
-        ghost1.style.gridColumn = `${baseG1Y+1}/10`;
+        ghost1.style.gridRow = `${baseg1TutX+1}/10`;
+        ghost1.style.gridColumn = `${baseg1TutY+1}/10`;
 
-        g1.x = baseG1X;
-        g1.y = baseG1Y;
-        g1.direction = "U"
+        g1Tut.x = baseg1TutX;
+        g1Tut.y = baseg1TutY;
+        g1Tut.direction = "U"
         
         let resetPill = document.getElementsByClassName("pill")
         for (let i=0; i<resetPill.length; i++) {
@@ -385,7 +384,7 @@ const roundOver = function() {
         grid.splice(0,10);
         base.forEach(arr => grid.push([...arr]));
         console.log(grid)
-        PM.pillCount = 0;
+        PMTut.pillCount = 0;
         
     }
 }
@@ -425,23 +424,23 @@ function setStop() {
       secUni.innerText = 0;
       milDec.innerText = 0;
       milUni.innerText = 0;
-      PM.points = 0;
+      PMTut.points = 0;
       Score.innerText = 0;
         
     // reset board, pills and grid.
 
-    PacMan.style.gridRow = `${basePMX+1}/10`
-    PacMan.style.gridColumn = `${basePMY+1}/10`
+    PacManTut.style.gridRow = `${basePMX+1}/10`
+    PacManTut.style.gridColumn = `${basePMY+1}/10`
 
-    PM.x = basePMX;
-    PM.y = basePMY;
+    PMTut.x = basePMX;
+    PMTut.y = basePMY;
 
-    ghost1.style.gridRow = `${baseG1X+1}/10`;
-    ghost1.style.gridColumn = `${baseG1Y+1}/10`;
+    ghost1.style.gridRow = `${baseg1TutX+1}/10`;
+    ghost1.style.gridColumn = `${baseg1TutY+1}/10`;
 
-    g1.x = baseG1X;
-    g1.y = baseG1Y;
-    g1.direction = "U"
+    g1Tut.x = baseg1TutX;
+    g1Tut.y = baseg1TutY;
+    g1Tut.direction = "U"
 
 
     
@@ -480,13 +479,13 @@ function setStop() {
 
       //   setInterval(() => {
       //     if (counter < 7) {
-      //     g1.x--;
+      //     g1Tut.x--;
       //     counter++;
-      //     ghost1.style.gridRow = `${g1.x+1}/10`;
+      //     ghost1.style.gridRow = `${g1Tut.x+1}/10`;
       //     } else if (counter < 14) {
-      //       g1.x++;
+      //       g1Tut.x++;
       //     counter++;
-      //     ghost1.style.gridRow = `${g1.x+1}/10`
+      //     ghost1.style.gridRow = `${g1Tut.x+1}/10`
       //     } else {
       //       counter = 0
       //     }
@@ -500,50 +499,51 @@ const moveGhost = function () {
     
       intervalId2 = setInterval(() => {
 
-        
+        ghostHit()
+        Score.innerText = PM.points
       
 
-        if (g1.direction === "U") {
-          if (grid[g1.x - 1][g1.y] === "O") {
-            g1.direction = "L";
-          } else if (grid[g1.x - 1][g1.y] === "V") {
+        if (g1Tut.direction === "U") {
+          if (grid[g1Tut.x - 1][g1Tut.y] === "O") {
+            g1Tut.direction = "L";
+          } else if (grid[g1Tut.x - 1][g1Tut.y] === "V") {
             clearInterval(intervalId);
           } else {
-            g1.x--;
-            ghost1.style.gridRow = `${g1.x + 1}/10`;
+            g1Tut.x--;
+            ghost1.style.gridRow = `${g1Tut.x + 1}/10`;
           }
         }
 
-        if (g1.direction === "R") {
-          if (grid[g1.x][g1.y + 1] === "O") {
-            g1.direction = "U";
-          } else if (grid[g1.x][g1.y + 1] === "V") {
+        if (g1Tut.direction === "R") {
+          if (grid[g1Tut.x][g1Tut.y + 1] === "O") {
+            g1Tut.direction = "U";
+          } else if (grid[g1Tut.x][g1Tut.y + 1] === "V") {
             clearInterval(intervalId);
           } else {
-            g1.y++;
-            ghost1.style.gridColumn = `${g1.y + 1}/10`;
+            g1Tut.y++;
+            ghost1.style.gridColumn = `${g1Tut.y + 1}/10`;
           }
         }
 
-        if (g1.direction === "D") {
-          if (grid[g1.x + 1][g1.y] === "O") {
-            g1.direction = "R";
-          } else if (grid[g1.x + 1][g1.y] === "V") {
+        if (g1Tut.direction === "D") {
+          if (grid[g1Tut.x + 1][g1Tut.y] === "O") {
+            g1Tut.direction = "R";
+          } else if (grid[g1Tut.x + 1][g1Tut.y] === "V") {
             clearInterval(intervalId);
           } else {
-            g1.x++;
-            ghost1.style.gridRow = `${g1.x + 1}/10`;
+            g1Tut.x++;
+            ghost1.style.gridRow = `${g1Tut.x + 1}/10`;
           }
         }
 
-        if (g1.direction === "L") {
-          if (grid[g1.x][g1.y - 1] === "O") {
-            g1.direction = "D";
-          } else if (grid[g1.x][g1.y - 1] === "V") {
+        if (g1Tut.direction === "L") {
+          if (grid[g1Tut.x][g1Tut.y - 1] === "O") {
+            g1Tut.direction = "D";
+          } else if (grid[g1Tut.x][g1Tut.y - 1] === "V") {
             clearInterval(intervalId);
           } else {
-            g1.y--;
-            ghost1.style.gridColumn = `${g1.y + 1}/10`;
+            g1Tut.y--;
+            ghost1.style.gridColumn = `${g1Tut.y + 1}/10`;
           }
         }
         
@@ -554,26 +554,26 @@ const moveGhost = function () {
 
 const ghostHit = function () {
  
-  if (g1.x===PM.x && g1.y===PM.y) {
+  if (g1Tut.x===PMTut.x && g1Tut.y===PMTut.y) {
    
-    console.log(`${g1.x} and ${PM.x}`)
-    console.log(`${g1.x} and ${PM.x}`);
+    console.log(`${g1Tut.x} and ${PMTut.x}`)
+    console.log(`${g1Tut.x} and ${PMTut.x}`);
     
-    PM.points -= 100
+    PMTut.points -= 100
     clearInterval(intervalId);
     clearInterval(intervalId2);
-    PacMan.style.gridRow = `${basePMX+1}/10`
-    PacMan.style.gridColumn = `${basePMY+1}/10`
+    PacManTut.style.gridRow = `${basePMTutX+1}/10`
+    PacManTut.style.gridColumn = `${basePMTutY+1}/10`
 
-    PM.x = basePMX;
-    PM.y = basePMY;
+    PMTut.x = basePMTutX;
+    PMTut.y = basePMTutY;
 
-    ghost1.style.gridRow = `${baseG1X+1}/10`;
-    ghost1.style.gridColumn = `${baseG1Y+1}/10`;
+    ghost1.style.gridRow = `${baseg1TutX+1}/10`;
+    ghost1.style.gridColumn = `${baseg1TutY+1}/10`;
 
-    g1.x = baseG1X;
-    g1.y = baseG1Y;
-    g1.direction = "U"
+    g1Tut.x = baseg1TutX;
+    g1Tut.y = baseg1TutY;
+    g1Tut.direction = "U"
     moveGhost();
 
   }
@@ -597,7 +597,7 @@ const ghostHit = function () {
 //     } else {
 
 //       ghost.y++;
-//       PacMan.style.gridColumn = `${ghost.y+1}/10`;
+//       PacManTut.style.gridColumn = `${ghost.y+1}/10`;
 
 //       removePill();
 //       scorePoints();
@@ -643,18 +643,18 @@ const ghostHit = function () {
 
 
 
-// g1.direction = 'U';
-// let intervalIdGhost = setInterval(ghostMove(g1), 175);
+// g1Tut.direction = 'U';
+// let intervalIdGhost = setInterval(ghostMove(g1Tut), 175);
 
 // 2.a direction change with buttons.
                             
                             
     // up.onclick = () => {
     
-    //   if (grid[PM.x-1][PM.y]!=='O') {
+    //   if (grid[PMTut.x-1][PMTut.y]!=='O') {
     //     clearInterval(intervalId)
-    //     PM.direction = "U";
-    //     console.log(PM.direction);
+    //     PMTut.direction = "U";
+    //     console.log(PMTut.direction);
     //     moveForward()
     //     };
         
@@ -662,10 +662,10 @@ const ghostHit = function () {
         
     // down.onclick = () => {
         
-    //   if (grid[PM.x+1][PM.y]!=='O') { 
+    //   if (grid[PMTut.x+1][PMTut.y]!=='O') { 
     //     clearInterval(intervalId)
-    //     PM.direction = "D";
-    //     console.log(PM.direction);
+    //     PMTut.direction = "D";
+    //     console.log(PMTut.direction);
     //     moveForward()
     //    };
         
@@ -673,7 +673,7 @@ const ghostHit = function () {
     
     // left.onclick = () => {
         
-    //   if (grid[PM.x][PM.y-1]!=='O') {
+    //   if (grid[PMTut.x][PM.y-1]!=='O') {
     //     clearInterval(intervalId)
     //     PM.direction = "L";
     //     console.log(PM.direction);
