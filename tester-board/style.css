@@ -1,0 +1,75 @@
+body {
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 600px;
+
+}
+
+#grid {
+    height: 500px;
+    width: 500px;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    border: 1px solid black;
+    position: relative;
+}
+
+.grid-wall {
+    background: black;
+    height: 50px;
+    width: 50px;
+}
+
+.grid-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: darkblue;
+    position: relative;
+    height: 50px;
+    width: 50px;
+}
+
+.pill {
+    background: white;
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+
+}
+
+.pill.active {
+    display: none;
+}
+
+#PM {
+    background: yellow;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+}
+
+
+
+#ghost1 {
+    background: green;
+    height: 40px;
+    width: 40px;
+    border-radius: 20%;
+    position: absolute;
+    z-index: 1;
+}
+
+
+#buttons {
+    margin: 20px;
+}
+
+.btn.no-click {
+    pointer-events: none;
+}
