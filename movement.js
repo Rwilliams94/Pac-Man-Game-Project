@@ -193,7 +193,43 @@ let modeSet = 0
   const life2 = document.querySelector(".life.two");
   const life3 = document.querySelector(".life.three");
 
-  
+  const audioStart = document.getElementById("audio-start")
+  const audioEnd = document.getElementById("audio-end")
+  const audioHit = document.getElementById("audio-hit")
+  const audioIntergalactic = document.getElementById("audio-intergalactic")
+  const audioInterstellar = document.getElementById("audio-interstellar")
+
+
+
+  function playStart() {
+    audioStart.play()
+  }
+
+  function playEnd() {
+    audioEnd.play()
+  }
+
+  function playHit() {
+    audioHit.play()
+  }
+
+  function playInterstellar() {
+    audioInterstellar.play()
+  }
+
+  function endInterstellar() {
+    audioInterstellar.pause();
+    audioInterstellar.currentTime = 0;
+  }
+
+  function playIntergalactic() {
+    audioIntergalactic.play()
+  }
+
+  function endIntergalactic() {
+    audioIntergalactic.pause();
+    audioIntergalactic.currentTime = 0;
+  }
 
   // mode switcher
 
@@ -433,7 +469,7 @@ resetPos()
 
 const startMinDec = 0;
 const startMinUni = 0;
-const startSecDec = 1;
+const startSecDec = 3;
 const startSecUni = 0;
  
 let time = startMinDec*60000 + startMinUni*6000 + startSecDec*1000 + startSecUni*100;
@@ -675,21 +711,30 @@ const scorePoints = function() {
 // !---------------------------------- High scores ---------------------------------------!
 
 
+
 const highscoreMarathon = [0,0,0,0,0];
-const highscoreSprint = [1,9,6,3,2];
+const highscoreSprint = [0,0,0,0,0];
 
 let marathonHighscores = document.querySelectorAll(".h-score-m")
 let sprintHighscores = document.querySelectorAll(".h-score-s")
 
 for (let i=0; i<highscoreSprint.length; i++) {
-  sprintHighscores[i].innerText = `${highscoreSprint[i]}`
+  highscoreSprint[i] = localStorage.getItem(`${i}s`)
 }
+
+for (let i=0; i<highscoreMarathon.length; i++) {
+  highscoreMarathon[i] = localStorage.getItem(`${i}m`)
+}
+
+for (let i=0; i<highscoreSprint.length; i++) {
       
+  sprintHighscores[i].innerText = `${highscoreSprint[i]}`  
+}
+
 for (let i=0; i<highscoreMarathon.length; i++) {
   marathonHighscores[i].innerText = `${highscoreMarathon[i]}`
+  
 }
-
-
 
 const addHighScore = function() {
 
@@ -702,7 +747,7 @@ const addHighScore = function() {
     for (let i=0; i<highscoreSprint.length; i++) {
       
       sprintHighscores[i].innerText = `${highscoreSprint[i]}`
-    
+      localStorage.setItem(`${i}s`,highscoreSprint[i])
       
     }
 
@@ -714,17 +759,12 @@ const addHighScore = function() {
 
     for (let i=0; i<highscoreMarathon.length; i++) {
       marathonHighscores[i].innerText = `${highscoreMarathon[i]}`
+      localStorage.setItem(`${i}m`,highscoreMarathon[i])
     }
 
 
   }
 }
-
-
-
-
-
-
 
 
 // !--------------------------------- 5. remove the pills once over them. ---------------------------------------!
@@ -789,23 +829,42 @@ const roundOver = function() {
 // !----------------------------- 7. start and stop game!! ----------------------------------------------!
 
 btnStart.addEventListener("click", () => {
-    if (modeSet === 0) {
-    newChronometer.startClick(printTime, setStop);
-    btnStart.classList.toggle("no-click");
-    moveGhost();
-    } else {
-    btnStart.classList.toggle("no-click");
-    moveGhost(); 
-    }
+
+    playStart()
+
+    setTimeout(() => {
+      if (modeSet === 0) {
+        newChronometer.startClick(printTime, setStop);
+        btnStart.classList.toggle("no-click");
+        moveGhost();
+        playIntergalactic();
+        } else {
+        btnStart.classList.toggle("no-click");
+        moveGhost(); 
+        playInterstellar()
+        }
+      
+    }, 2000);
+   
+
+    
     
 });
 
 function setStop() {
+
+    
+
     if (modeSet === 0) {
 
       // !--------------------- Time trial mode ----------------------------!
       
+
       if (newChronometer.currentTime <= 0) {
+
+
+        endIntergalactic();
+        playEnd()
         
         // stop clocks and movement
         
@@ -859,6 +918,9 @@ function setStop() {
       // !----------------------------- Marathon mode -----------------------------!
         if (PM.life <= 0) {
 
+          endInterstellar();
+          playEnd();
+
         // stop movement
 
          // stop clocks and movement
@@ -879,6 +941,7 @@ function setStop() {
 
         PM.points = 0;
         Score.innerText = 0;
+        ghostSpeed = baseGhostSpeed;
 
         // reset board, pills, grid and lives.
 
@@ -1134,7 +1197,10 @@ const ghostHit = function () {
       if ((PM.x+" "+PM.y) === (g1.x+" "+g1.y) || (PM.x+" "+PM.y) === (g2.x+" "+g2.y) || (PM.x+" "+PM.y) === (g3.x+" "+g3.y) || (PM.x+" "+PM.y) === (g4.x+" "+g4.y) ||
       (PM.x+1+" "+PM.y) === (g1.x+" "+g1.y) || (PM.x+1+" "+PM.y) === (g2.x+" "+g2.y) || (PM.x+1+" "+PM.y) === (g3.x+" "+g3.y) || (PM.x+1+" "+PM.y) === (g4.x+" "+g4.y) ) {
           
+          playHit()
+          if (modeSet === 0) {
           PM.points -= 500
+          }
 
           clearInterval(intervalId);
           clearInterval(intervalId1);
@@ -1147,6 +1213,7 @@ const ghostHit = function () {
           // for marathon mode
 
           if (modeSet === 1) {
+
             PM.life --
             if (PM.life === 2) {
               life3.classList.add("active");
@@ -1167,7 +1234,10 @@ const ghostHit = function () {
       if ((PM.x+" "+PM.y) === (g1.x+" "+g1.y) || (PM.x+" "+PM.y) === (g2.x+" "+g2.y) || (PM.x+" "+PM.y) === (g3.x+" "+g3.y) || (PM.x+" "+PM.y) === (g4.x+" "+g4.y) ||
       (PM.x+" "+PM.y-1) === (g1.x+" "+g1.y) || (PM.x+" "+PM.y-1) === (g2.x+" "+g2.y) || (PM.x+" "+PM.y-1) === (g3.x+" "+g3.y) || (PM.x+" "+PM.y-1) === (g4.x+" "+g4.y) ) {
         
-        PM.points -= 500
+        playHit()
+          if (modeSet === 0) {
+          PM.points -= 500
+          }
 
         clearInterval(intervalId);
         clearInterval(intervalId1);
@@ -1200,7 +1270,10 @@ const ghostHit = function () {
       if ((PM.x+" "+PM.y) === (g1.x+" "+g1.y) || (PM.x+" "+PM.y) === (g2.x+" "+g2.y) || (PM.x+" "+PM.y) === (g3.x+" "+g3.y) || (PM.x+" "+PM.y) === (g4.x+" "+g4.y) ||
       (PM.x-1+" "+PM.y) === (g1.x+" "+g1.y) || (PM.x-1+" "+PM.y) === (g2.x+" "+g2.y) || (PM.x-1+" "+PM.y) === (g3.x+" "+g3.y) || (PM.x-1+" "+PM.y) === (g4.x+" "+g4.y) ) {
         
-        PM.points -= 500
+        playHit()
+          if (modeSet === 0) {
+          PM.points -= 500
+          }
 
         clearInterval(intervalId);
         clearInterval(intervalId1);
@@ -1234,7 +1307,10 @@ const ghostHit = function () {
       (PM.x+" "+PM.y+1) === (g1.x+" "+g1.y) || (PM.x+" "+PM.y+1) === (g2.x+" "+g2.y) || (PM.x+" "+PM.y+1) === (g3.x+" "+g3.y) || (PM.x+" "+PM.y+1) === (g4.x+" "+g4.y) ){
       
         
-        PM.points -= 500
+        playHit()
+          if (modeSet === 0) {
+          PM.points -= 500
+          }
 
         clearInterval(intervalId);
         clearInterval(intervalId1);
@@ -1612,6 +1688,7 @@ const ghostHitTut = function () {
       if ((PMTut.x+" "+PMTut.y) === (g1Tut.x+" "+g1Tut.y) || (PMTut.x+1+" "+PMTut.y) === (g1Tut.x+" "+g1Tut.y) ){
           
         PMTut.points -= 200
+        playHit();
 
         clearInterval(intervalIdTut);
         clearInterval(intervalId2Tut);
@@ -1629,6 +1706,7 @@ const ghostHitTut = function () {
       if ((PMTut.x+" "+PMTut.y) === (g1Tut.x+" "+g1Tut.y) || (PMTut.x+" "+PMTut.y-1) === (g1Tut.x+" "+g1Tut.y) ) {
         
         PMTut.points -= 200
+        playHit();
 
         clearInterval(intervalIdTut);
         clearInterval(intervalId2Tut);
@@ -1646,6 +1724,7 @@ const ghostHitTut = function () {
       if ((PMTut.x+" "+PMTut.y) === (g1Tut.x+" "+g1Tut.y) || (PMTut.x-1+" "+PMTut.y) === (g1Tut.x+" "+g1Tut.y)) {
         
         PMTut.points -= 200
+        playHit();
 
         clearInterval(intervalIdTut);
         clearInterval(intervalId2Tut);
@@ -1663,6 +1742,7 @@ const ghostHitTut = function () {
       
         
         PMTut.points -= 200
+        playHit();
 
         clearInterval(intervalIdTut);
         clearInterval(intervalId2Tut);
