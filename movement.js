@@ -258,6 +258,9 @@ let modeSet = 0
      clearInterval(intervalId3);
      clearInterval(intervalId4);
      btnStart.classList.remove("no-click")
+
+     endIntergalactic();
+     endInterstellar();
      
     
      console.log(btnStart.classList);
