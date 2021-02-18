@@ -1,0 +1,640 @@
+
+
+/* body and everything */
+
+body {
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 800px;
+    background: black;
+    color: white;
+
+}
+
+
+/* title board */
+
+#header-bar {
+    display: flex;
+    height: 200px;
+}
+
+#title-box {
+    display: flex;
+    width: 500px;
+    height: 75px;
+    font-size: 30px;
+    padding: 0px;
+    margin: 0px;
+ 
+    justify-content: center;
+    align-items: center;
+
+}
+
+h1 {
+    margin: 0px;
+}
+
+#title {
+    margin: 0px;
+    font-size: 70px;
+ 
+}
+
+h1.mode {
+    display: none;
+    font-size: 1px;
+}
+
+.highscore-box ul {
+    list-style: none;
+    padding: 0px;
+}
+
+.middle-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* score and timers */
+
+#score-timer {
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    font-family: "Digi";
+
+}
+
+#clock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+
+#clock.mode {
+    display: none;
+}
+
+
+
+
+/* grid */
+
+#grid {
+    height: 500px;
+    width: 975px;
+    display: grid;
+    grid-template-columns: repeat(39, 1fr);
+    grid-template-rows: repeat(20, 1fr);
+    border: 1px solid black;
+    position: relative;
+}
+
+.grid-wall {
+    background: blue;
+    border: 2px solid darkblue;
+    height: 21px;
+    width: 21px;
+}
+
+.grid-wall.mode {
+    background: darkgrey;
+    border: 2px solid darkslategrey;
+}
+
+.grid-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    position: relative;
+    height: 25px;
+    width: 25px;
+}
+
+.grid-cell.mode {
+    background: darkblue;
+}
+
+/* Characters */
+
+.pill {
+    background: white;
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+
+}
+
+.pill.active {
+    display: none;
+}
+
+
+#PM {
+    background: yellow;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+}
+
+.ghost {
+    background: green;
+    height: 25px;
+    width: 25px;
+    border-radius: 20%;
+    position: absolute;
+    z-index: 1;
+}
+
+
+
+/* buttons */
+
+.score-head {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    font-size: 30px;
+}
+
+#score {
+    font-size: 100px;
+}
+
+
+/* buttons */
+
+
+
+
+#buttons {
+    margin: 20px;
+    height: 500px;
+    width: 1000px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+#button-panel {
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border-color: darkred;
+    border-style: solid;
+    border-top: 5px;
+    border-right: 7px;
+    background: rgb(211, 23, 60);
+    color: white;
+    font-size: 20px;
+    outline: none;
+}
+
+
+
+
+
+.btn:hover {
+    background: rgb(179, 18, 50);
+}
+
+.btn:active {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border-color: darkred;
+    border-style: solid;
+    background: rgb(211, 23, 60);
+    color: white;
+    font-size: 20px;
+    outline: none;
+
+}
+
+.btn.mode {
+    background: gold;
+    border-color: goldenrod;
+}
+
+.btn.mode:hover {
+    background: rgb(177, 132, 18);
+}
+
+.btn.mode:active {
+    background: gold;
+    border-color: goldenrod;
+}
+
+.button-outer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background:rgb(230, 52, 88);
+
+}
+
+.button-outer.mode {
+    background: rgb(252, 219, 34);
+}
+
+
+
+.btn.no-click {
+    pointer-events: none;
+}
+
+/* control square */
+
+#controls {
+    background: black;
+    height: 210px;
+    width: 210px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    border: 3px solid darkblue;
+    position: relative;
+}
+
+
+.arrow-box-left {
+    grid-column: 1/3;
+    grid-row: 2/3;
+    background: black;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left {
+    width: 0;
+    height: 0;
+    border-right: 40px solid rgb(211, 23, 60);
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    margin-right: 20px;
+    
+}
+
+.left.mode {
+    border-right-color: gold;
+}
+
+.arrow-box-right {
+    grid-column: 3/3;
+    grid-row: 2/3;
+    background: black;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.right {
+    width: 0;
+    height: 0;
+    border-left: 40px solid rgb(211, 23, 60);
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    margin-left: 20px;
+    
+}
+
+.right.mode {
+    border-left-color: gold;
+}
+
+
+.arrow-box-up {
+    grid-column: 2/3;
+    grid-row: 1/3;
+    background: black;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.up {
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 40px solid rgb(211, 23, 60);
+    margin-bottom: 20px;
+}
+
+.up.mode {
+    border-bottom-color: gold;
+}
+
+
+.box-joystick {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow-box-down {
+    grid-column: 2/3;
+    grid-row: 3/3;
+    background: black;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.down {
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top: 40px solid rgb(211, 23, 60);
+    margin-top: 20px;
+}
+
+.down.mode {
+    border-top-color: gold;
+}
+
+
+    
+
+/* joystick */
+
+#joystick {
+    background: red;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    box-shadow:
+    0px 0px 0px 10px #e32,
+    0px 0px 0px 20px #d32,
+    0px 0px 0px 30px #c32;
+    position: absolute;
+    z-index: 1;
+    
+
+}
+
+#joystick.mode {
+    background: gold;
+    box-shadow:
+    0px 0px 0px 10px rgb(240, 188, 58),
+    0px 0px 0px 20px rgb(233, 177, 34),
+    0px 0px 0px 30px goldenrod;
+}
+
+.left-side {
+    left: 55px;
+}
+
+.right-side {
+    right: 55px
+}
+
+.up-side {
+    top: 55px;
+}
+
+.down-side {
+    bottom: 55px;
+}
+
+#stick {
+    background: grey;
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 0.5;
+}
+
+/* Game Over */
+
+.popup {
+    display: flex;
+
+}
+
+
+
+.popup .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: darkblue;
+    width: 550px;
+    height: 320px;
+    z-index: 3;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.popup .try-again {
+   
+    width: 510px;
+    height: 30px;
+    bottom: 10px;
+    background: black;
+    color: white;
+    text-align: center;
+}
+
+
+
+
+.popup.active .content {
+    transition: all 300ms ease-in-out;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+
+
+/* Tutorial */
+
+#tutorial {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#grid-tut {
+    height: 400px;
+    width: 400px;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    border: 1px solid black;
+    position: relative;
+}
+
+.grid-wall-tut {
+    background: black;
+    height: 40px;
+    width: 40px;
+}
+
+.grid-cell-tut {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: darkblue;
+    position: relative;
+    height: 40px;
+    width: 40px;
+}
+
+.pillTut {
+    background: white;
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+
+}
+
+.pillTut.active {
+    display: none;
+}
+
+#PMTut {
+    background: yellow;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+}
+
+
+
+#ghostTut {
+    background: green;
+    height: 40px;
+    width: 40px;
+    border-radius: 20%;
+    position: absolute;
+    z-index: 1;
+}
+
+
+#buttons {
+    margin: 20px;
+}
+
+.btn.no-click {
+    pointer-events: none;
+}
+
+.popup-tut .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: black;
+    border: 5px solid blue;
+    width: 800px;
+    height: 850px;
+    z-index: 3;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.popup-tut .grid {
+    position: absolute;
+    left: 170px ;
+}
+
+
+.popup-tut .try-again {
+   
+    width: 510px;
+    height: 30px;
+    bottom: 10px;
+    background: black;
+    color: white;
+    text-align: center;
+}
+
+
+
+
+.popup-tut.active .content {
+    transition: all 300ms ease-in-out;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+#buttons-tut {
+    margin: 20px;
+    height: 200px;
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-left: 175px;
+    margin-right: 50px;
+    
+
+}
+
+.score-head-tut {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+    font-size: 30px;
+}
+
+
+#scoreTut {
+    margin: 0;
+}
