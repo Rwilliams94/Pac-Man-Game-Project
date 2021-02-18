@@ -41,7 +41,7 @@ export class Chronometer {
   }
 
   stopClick() {
-    if (this.currentTime === 0) clearInterval(this.intervalId);
+    clearInterval(this.intervalId);
   }
 
   resetClick() {
@@ -181,12 +181,19 @@ let modeSet = 0
   const btnMode = document.getElementById("mode-button");
   const joystick = document.getElementById("joystick");
   const gameOver = document.getElementById("game-over");
-  const tryAgain = document.getElementById("try-again");
+  const tryAgain = document.getElementById("try");
   const scoreText = document.getElementById("score-text");
   const clock = document.getElementById("clock");
   const marathon = document.getElementById("marathon");
   const sprint = document.getElementById("sprint");
+  const lives = document.getElementById("lives")
+  
 
+  const life1 = document.querySelector(".life.one");
+  const life2 = document.querySelector(".life.two");
+  const life3 = document.querySelector(".life.three");
+
+  
 
   // mode switcher
 
@@ -199,6 +206,7 @@ let modeSet = 0
   let right = document.getElementsByClassName("left");
   let btn = document.getElementsByClassName("btn");
   let btnOuter = document.getElementsByClassName("button-outer");
+  let hSBoxes = document.getElementsByClassName("highscore-box");
 
 
   btnMode.onclick = function() {
@@ -206,14 +214,17 @@ let modeSet = 0
    // !--------------------- Reset all ----------------------------!
       
      // stop clocks and movement
-        
-     newChronometer.stopClick();
+     newChronometer.stopClick()  
+     setStop()
      clearInterval(intervalId);
      clearInterval(intervalId1);
      clearInterval(intervalId2);
      clearInterval(intervalId3);
      clearInterval(intervalId4);
-     btnStart.classList.toggle("no-click");
+     btnStart.classList.remove("no-click")
+     
+    
+     console.log(btnStart.classList);
  
      // resest time
      
@@ -247,10 +258,13 @@ let modeSet = 0
       
       modeSet = 1;
 
+      
+
       joystick.classList.toggle("mode");
       clock.classList.toggle("mode");
       sprint.classList.toggle("mode");
       marathon.classList.toggle("mode");
+      lives.classList.toggle("mode");
 
 
     for (let i=0; i<gridWalls.length; i++) {
@@ -283,6 +297,11 @@ let modeSet = 0
 
     for (let i=0; i<btnOuter.length; i++) {
       btnOuter[i].classList.toggle("mode");
+    }
+
+    
+    for (let i=0; i<hSBoxes.length; i++) {
+      hSBoxes[i].classList.toggle("mode");
     }
 
     } else {
@@ -293,6 +312,7 @@ let modeSet = 0
       clock.classList.toggle("mode");
       sprint.classList.toggle("mode");
       marathon.classList.toggle("mode");
+      lives.classList.toggle("mode");
 
 
     for (let i=0; i<gridWalls.length; i++) {
@@ -325,6 +345,10 @@ let modeSet = 0
 
     for (let i=0; i<btnOuter.length; i++) {
       btnOuter[i].classList.toggle("mode");
+    }
+
+    for (let i=0; i<hSBoxes.length; i++) {
+      hSBoxes[i].classList.toggle("mode");
     }
     }
       
@@ -336,22 +360,11 @@ let modeSet = 0
   }
 
 
-  
-
-
-
-
-
   let intervalId = 0;
   let intervalId1 = 0;
   let intervalId2 = 0;
   let intervalId3 = 0;
   let intervalId4 = 0;
-  
-
-
-
-  
 
 // 1.c set the starting postions.
 
@@ -377,6 +390,9 @@ let baseG4Y = g4.y
 
 
 const resetPos = function() {
+
+  PacMan.style.backgroundImage = "url(./img/spaceman-still-down.png)"
+
  PacMan.style.gridRow = `${basePMX+1}/20`;
  PacMan.style.gridColumn = `${basePMY+1}/39`;
 
@@ -416,8 +432,8 @@ resetPos()
 
 
 const startMinDec = 0;
-const startMinUni = 3;
-const startSecDec = 0;
+const startMinUni = 0;
+const startSecDec = 1;
 const startSecUni = 0;
  
 let time = startMinDec*60000 + startMinUni*6000 + startSecDec*1000 + startSecUni*100;
@@ -566,6 +582,7 @@ const moveForward = function () {
   intervalId = setInterval(() => {
     switch (PM.direction) {
       case "U":
+
         if (PM.x === 0) {
           clearInterval(intervalId);
         } else if (grid[PM.x - 1][PM.y] === "O") {
@@ -573,6 +590,8 @@ const moveForward = function () {
         } else {
           PM.x--;
           PacMan.style.gridRow = `${PM.x + 1}/20`;
+
+          PacMan.style.backgroundImage = "url(./img/spaceman-run-up.gif)"
 
           ghostHit()
           Score.innerText = PM.points
@@ -591,6 +610,7 @@ const moveForward = function () {
         } else {
           PM.y++;
           PacMan.style.gridColumn = `${PM.y + 1}/39`;
+          PacMan.style.backgroundImage = "url(./img/spaceman-run-right.gif)"
           
           ghostHit()
           Score.innerText = PM.points
@@ -608,6 +628,7 @@ const moveForward = function () {
         } else {
           PM.x++;
           PacMan.style.gridRow = `${PM.x + 1}/20`;
+          PacMan.style.backgroundImage = "url(./img/spaceman-run-down.gif)"
 
           ghostHit()
           Score.innerText = PM.points
@@ -624,6 +645,7 @@ const moveForward = function () {
         }  else {
           PM.y--;
           PacMan.style.gridColumn = `${PM.y + 1}/39`;
+          PacMan.style.backgroundImage = "url(./img/spaceman-run-left.gif)"
 
           ghostHit()
           Score.innerText = PM.points
@@ -650,6 +672,61 @@ const scorePoints = function() {
     };
 }
 
+// !---------------------------------- High scores ---------------------------------------!
+
+
+const highscoreMarathon = [0,0,0,0,0];
+const highscoreSprint = [1,9,6,3,2];
+
+let marathonHighscores = document.querySelectorAll(".h-score-m")
+let sprintHighscores = document.querySelectorAll(".h-score-s")
+
+for (let i=0; i<highscoreSprint.length; i++) {
+  sprintHighscores[i].innerText = `${highscoreSprint[i]}`
+}
+      
+for (let i=0; i<highscoreMarathon.length; i++) {
+  marathonHighscores[i].innerText = `${highscoreMarathon[i]}`
+}
+
+
+
+const addHighScore = function() {
+
+  if (modeSet === 0) {
+
+    highscoreSprint.push(PM.points);
+    highscoreSprint.sort((a,b) => b-a)
+    highscoreSprint.pop()
+    
+    for (let i=0; i<highscoreSprint.length; i++) {
+      
+      sprintHighscores[i].innerText = `${highscoreSprint[i]}`
+    
+      
+    }
+
+  } else {
+
+    highscoreMarathon.push(PM.points);
+    highscoreMarathon.sort((a,b) => b-a)
+    highscoreMarathon.pop()
+
+    for (let i=0; i<highscoreMarathon.length; i++) {
+      marathonHighscores[i].innerText = `${highscoreMarathon[i]}`
+    }
+
+
+  }
+}
+
+
+
+
+
+
+
+
 // !--------------------------------- 5. remove the pills once over them. ---------------------------------------!
 
 const removePill = function() {
@@ -664,6 +741,10 @@ const removePill = function() {
 
 const roundOver = function() {
     if (PM.pillCount===348) {
+
+      setTimeout(() => {
+        
+    
       
         clearInterval(intervalId);
         clearInterval(intervalId1);
@@ -677,6 +758,8 @@ const roundOver = function() {
             resetPill[i].classList.remove("active");
         }
         
+        
+
         grid.splice(0,grid.length);
         base.forEach(arr => grid.push([...arr]));
 
@@ -695,7 +778,7 @@ const roundOver = function() {
         
         
 
-        
+      }, 300);
 
         
         
@@ -736,8 +819,9 @@ function setStop() {
 
           // alert score and end game 
             
-          scoreText.innerText = `you scored ${document.getElementById("score").innerText}`
+          scoreText.innerText = `${PM.points}`
           gameOver.classList.toggle("active")
+          addHighScore()
           
             
           
@@ -789,8 +873,9 @@ function setStop() {
        
         // alert score, reset score and end game 
               
-        scoreText.innerText = `you scored ${document.getElementById("score").innerText}`
+        scoreText.innerText = `${PM.points}`
         gameOver.classList.toggle("active");
+        addHighScore()
 
         PM.points = 0;
         Score.innerText = 0;
@@ -809,6 +894,10 @@ function setStop() {
 
         PM.pillCount = 0;
         PM.life = basePMLife
+
+        life1.classList.remove("active");
+        life2.classList.remove("active");
+        life3.classList.remove("active");
      }
 
     }
@@ -1059,6 +1148,13 @@ const ghostHit = function () {
 
           if (modeSet === 1) {
             PM.life --
+            if (PM.life === 2) {
+              life3.classList.add("active");
+            } else if (PM.life === 1) {
+              life2.classList.add("active");
+            } else if (PM.life === 0) {
+              life1.classList.add("active");
+            }
           }
 
 
@@ -1085,6 +1181,13 @@ const ghostHit = function () {
 
         if (modeSet === 1) {
           PM.life --
+          if (PM.life === 2) {
+            life3.classList.add("active");
+          } else if (PM.life === 1) {
+            life2.classList.add("active");
+          } else if (PM.life === 0) {
+            life1.classList.add("active");
+          }
         }
 
 
@@ -1111,6 +1214,13 @@ const ghostHit = function () {
 
         if (modeSet === 1) {
           PM.life --
+          if (PM.life === 2) {
+            life3.classList.add("active");
+          } else if (PM.life === 1) {
+            life2.classList.add("active");
+          } else if (PM.life === 0) {
+            life1.classList.add("active");
+          }
         }
 
 
@@ -1138,6 +1248,13 @@ const ghostHit = function () {
 
         if (modeSet === 1) {
           PM.life --
+          if (PM.life === 2) {
+            life3.classList.add("active");
+          } else if (PM.life === 1) {
+            life2.classList.add("active");
+          } else if (PM.life === 0) {
+            life1.classList.add("active");
+          }
         }
 
 
@@ -1214,6 +1331,8 @@ let baseg1TutX = g1Tut.x
 let baseg1TutY = g1Tut.y
 
 const resetPosTut = function() {
+
+PacManTut.style.backgroundImage = "url(./img/spaceman-still-down-tutorial.png)"
 
 PacManTut.style.gridRow = `${basePMTutX+1}/10`;
 PacManTut.style.gridColumn = `${basePMTutY+1}/10`;
@@ -1301,6 +1420,7 @@ const moveForwardTut = function () {
         } else {
           PMTut.x--;
           PacManTut.style.gridRow = `${PMTut.x + 1}/10`;
+          PacManTut.style.backgroundImage = "url(./img/spaceman-run-up-tutorial.gif)"
 
           
           removePillTut();
@@ -1318,6 +1438,7 @@ const moveForwardTut = function () {
         } else {
           PMTut.y++;
           PacManTut.style.gridColumn = `${PMTut.y + 1}/10`;
+          PacManTut.style.backgroundImage = "url(./img/spaceman-run-left-tutorial.gif)"
 
           
           removePillTut();
@@ -1335,6 +1456,7 @@ const moveForwardTut = function () {
         } else {
           PMTut.x++;
           PacManTut.style.gridRow = `${PMTut.x + 1}/10`;
+          PacManTut.style.backgroundImage = "url(./img/spaceman-run-down-tutorial.gif)"
 
           
           removePillTut();
@@ -1352,6 +1474,7 @@ const moveForwardTut = function () {
         } else {
           PMTut.y--;
           PacManTut.style.gridColumn = `${PMTut.y + 1}/10`;
+          PacManTut.style.backgroundImage = "url(./img/spaceman-run-left-tutorial.gif)"
           
           
           removePillTut();
@@ -1393,6 +1516,9 @@ const removePillTut = function() {
 
 const roundOverTut = function() {
   if (PMTut.pillCount===27) {
+
+    setTimeout(() => {
+      
     
       clearInterval(intervalIdTut);
 
@@ -1406,6 +1532,9 @@ const roundOverTut = function() {
       gridTut.splice(0,10);
       baseTut.forEach(arr => gridTut.push([...arr]));
       PMTut.pillCount = 0;
+
+      
+    }, 400);
       
   }
 }

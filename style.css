@@ -2,14 +2,29 @@
 
 /* body and everything */
 
+html {
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 body {
+    
+    background-image: url(./img/29262.jpg);
+    background-size: auto;
+    background-repeat: no-repeat;
+
     display: flex; 
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    height: 800px;
-    background: black;
+    border: 5px darkblue solid;
+    height: 1000px;
+    width:1500px;
+    margin: 5px;
     color: white;
+    font-family: 'Russo One', sans-serif;;
 
 }
 
@@ -19,12 +34,14 @@ body {
 #header-bar {
     display: flex;
     height: 200px;
+    width: 975px;
+    justify-content: space-between;
 }
 
 #title-box {
     display: flex;
     width: 500px;
-    height: 75px;
+    height: 30px;
     font-size: 30px;
     padding: 0px;
     margin: 0px;
@@ -35,7 +52,9 @@ body {
 }
 
 h1 {
+    
     margin: 0px;
+    font-size: 30px;
 }
 
 #title {
@@ -52,13 +71,38 @@ h1.mode {
 .highscore-box ul {
     list-style: none;
     padding: 0px;
+    margin: 10px 0 0 0;
 }
 
-.middle-box {
+.highscore-box.mode {
+    display: none;
+}
+
+#middle-box {
+    width: 400px;
+    height: 150px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     align-items: center;
+    
+}
+
+#left-box {
+    width: 250px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#right-box {
+    width: 250px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 /* score and timers */
@@ -67,19 +111,48 @@ h1.mode {
     width: 400px;
     display: flex;
     justify-content: center;
-    font-family: "Digi";
+    
 
 }
 
 #clock {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
+    width: 350px;
+    
+    
+    font-size: 60px;
+    margin-top: 10px;
+    font-family: 'Russo One', sans-serif;;
 }
 
 #clock.mode {
+    display: none;
+}
+
+#lives {
+    border: dodgerblue;
+    display: flex;
+    justify-content: center;
+    width: 450px;
+    height: 50px;
+    margin-top: 10px;
+    
+    
+}
+
+.life {
+    background-image: url(./img/spaceman-life.png);
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+#lives.mode {
+    display: none;
+}
+
+.life.active {
     display: none;
 }
 
@@ -96,6 +169,9 @@ h1.mode {
     grid-template-rows: repeat(20, 1fr);
     border: 1px solid black;
     position: relative;
+    padding: 10px;
+    border: darkblue 3px solid;
+    background: black;
 }
 
 .grid-wall {
@@ -106,8 +182,8 @@ h1.mode {
 }
 
 .grid-wall.mode {
-    background: darkgrey;
-    border: 2px solid darkslategrey;
+    background: rgb(22, 52, 150);
+    border: 2px solid #09498a;
 }
 
 .grid-cell {
@@ -121,13 +197,14 @@ h1.mode {
 }
 
 .grid-cell.mode {
-    background: darkblue;
+    background: rgb(6, 6, 54);
 }
 
 /* Characters */
 
 .pill {
     background: white;
+    border: 2px goldenrod solid;
     height: 5px;
     width: 5px;
     border-radius: 50%;
@@ -140,19 +217,23 @@ h1.mode {
 
 
 #PM {
-    background: yellow;
-    height: 25px;
-    width: 25px;
+    background-image: url(./img/spaceman-still-down.png);
+    background-size: 30px 30px;
+    height: 30px;
+    width: 30px;
     border-radius: 50%;
     position: absolute;
     z-index: 1;
 }
 
 .ghost {
-    background: green;
-    height: 25px;
+
+    background-image: url("./img/Alien.gif");
+    background-repeat: no-repeat;
+    background-size: auto;
     width: 25px;
-    border-radius: 20%;
+    height: 25px;
+   
     position: absolute;
     z-index: 1;
 }
@@ -166,24 +247,27 @@ h1.mode {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 200px;
+    width: 350px;
+    height: 190px;
     font-size: 30px;
+    margin: 0;
+    padding-top: 20px;
+    background: black;
+    border: solid darkblue 5px;
 }
+
+
 
 #score {
     font-size: 100px;
+    
 }
-
-
-/* buttons */
-
-
 
 
 #buttons {
     margin: 20px;
     height: 500px;
-    width: 1000px;
+    width: 1100px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -191,11 +275,14 @@ h1.mode {
 }
 
 #button-panel {
-    width: 250px;
-    height: 250px;
+    width: 350px;
+    height: 210px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
+    border: darkblue solid 5px;
+    padding: 0 10px;
+    background: black;
 }
 
 .bbox {
@@ -217,6 +304,7 @@ h1.mode {
     color: white;
     font-size: 20px;
     outline: none;
+    cursor: pointer;
 }
 
 
@@ -284,8 +372,9 @@ h1.mode {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    border: 3px solid darkblue;
+    border: 5px solid darkblue;
     position: relative;
+    
 }
 
 
@@ -468,23 +557,28 @@ h1.mode {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
-    background: darkblue;
+    background:black;
+    border: darkblue 5px solid;
     width: 550px;
-    height: 320px;
+    height: 420px;
     z-index: 3;
     text-align: center;
     padding: 20px;
     box-sizing: border-box;
 }
 
-.popup .try-again {
+.popup .content h1 {
+    font-size: 80px;
+}
+
+#score-text {
+    font-size: 80px;
+    margin: 0px;
+}
+
+.popup #try {
    
-    width: 510px;
-    height: 30px;
-    bottom: 10px;
-    background: black;
-    color: white;
-    text-align: center;
+    margin-top: 0;
 }
 
 
@@ -534,8 +628,9 @@ h1.mode {
 
 .pillTut {
     background: white;
-    height: 5px;
-    width: 5px;
+    border: 2px goldenrod solid;
+    height: 8px;
+    width: 8px;
     border-radius: 50%;
 
 }
@@ -545,7 +640,8 @@ h1.mode {
 }
 
 #PMTut {
-    background: yellow;
+    background-image: url(./img/spaceman-still-down-tutorial.png);
+    background-size: 50px 50px;
     height: 40px;
     width: 40px;
     border-radius: 50%;
@@ -556,7 +652,8 @@ h1.mode {
 
 
 #ghostTut {
-    background: green;
+    background-image: url(./img/Alien-tutorial.gif);
+    background-size: auto;
     height: 40px;
     width: 40px;
     border-radius: 20%;
@@ -580,7 +677,7 @@ h1.mode {
     transform: translate(-50%, -50%) scale(0);
     background: black;
     border: 5px solid blue;
-    width: 800px;
+    width: 850px;
     height: 850px;
     z-index: 3;
     text-align: center;
@@ -590,7 +687,7 @@ h1.mode {
 
 .popup-tut .grid {
     position: absolute;
-    left: 170px ;
+    left: 190px ;
 }
 
 
@@ -619,8 +716,9 @@ h1.mode {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    margin-left: 175px;
+    margin-left: 190px;
     margin-right: 50px;
+    margin-top: 0;
     
 
 }
@@ -637,4 +735,15 @@ h1.mode {
 
 #scoreTut {
     margin: 0;
+}
+
+.tut-text {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tut-text li {
+    margin-top: 5px;
+    font-size: 13px;
 }

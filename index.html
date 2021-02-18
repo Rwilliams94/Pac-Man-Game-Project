@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,31 +12,20 @@
   </head>
   <body>
     <section id="header-bar">
+      <div id="left-box">
 
-    <div class="highscore-box">
-        <h1 class="highscore">Marathon Highscore</h1>
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-        </ul>
-    </div>
-    
+          <div class="highscore-box mode">
+              <h1 class="highscore ">Highscore</h1>
+              <ul>
+                  <li>1 : <span class="h-score-m"></span></li>
+                  <li>2 : <span class="h-score-m"></span></li>
+                  <li>3 : <span class="h-score-m"></span></li>
+                  <li>4 : <span class="h-score-m"></span></li>
+                  <li>5 : <span class="h-score-m"></span></li>
+              </ul>
+          </div>
 
-    <div class="middle-box">
-
-        <h1 id="title">PAC-MAN</h1>
-
-        <div id="title-box">
-        <h1 id="sprint" class="">SPRINT</h1>
-        <h1 id="marathon" class="mode">MARATHON</h1>
-        
-        </div>
-
-        <div id="score-timer">
-        <div id="clock">
+          <div id="clock">
             <div id="sphere">
             <span id="minDec" class="number">0</span
             ><span id="minUni" class="number">0</span><span>:</span
@@ -41,31 +33,53 @@
             ><span id="secUni" class="number">0</span>:<span id="milDec">0</span
             ><span id="milUni">0</span>
             </div>
+          </div>
+
+      </div>  
+    
+
+    <div id="middle-box">
+
+        <h1 id="title">SPACEMAN</h1>
+
+        <div id="title-box">
+          <h1 id="sprint" class="">SPRINT</h1>
+          <h1 id="marathon" class="mode">MARATHON</h1>
         </div>
-        </div>
+
+       
     </div>
 
-    <div class="highscore-box">
-    <h1 class="highscore">Sprint Highscore</h1>
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-        </ul>
-    
-    
+    <div id="right-box">
+
+      <div class="highscore-box">
+        <h1 class="highscore ">Highscore</h1>
+          <ul>
+            <li>1 : <span class="h-score-s"></span></li>
+            <li>2 : <span class="h-score-s"></span></li>
+            <li>3 : <span class="h-score-s"></span></li>
+            <li>4 : <span class="h-score-s"></span></li>
+            <li>5 : <span class="h-score-s"></span></li>
+          </ul>
+      </div>
+      
+
+      <div id="lives" class="mode">
+        <div class="life one"></div>
+        <div class="life two"></div>
+        <div class="life three"></div>
+      </div>
+
     </div>
 
     </section>
 
     <section id="grid">
       <div id="PM" class="Pac-man"></div>
-      <div id="ghost1" class="ghost">1</div>
-      <div id="ghost2" class="ghost">2</div>
-      <div id="ghost3" class="ghost">3</div>
-      <div id="ghost4" class="ghost">4</div>
+      <div id="ghost1" class="ghost"></div>
+      <div id="ghost2" class="ghost"></div>
+      <div id="ghost3" class="ghost"></div>
+      <div id="ghost4" class="ghost"></div>
 
       <!-- row 0 -->
 
@@ -1626,19 +1640,28 @@
       <div class="content">
         <h1 id="titleTut">TUTORIAL</h1>
         <ul class="tut-text">
-          <li>Click START on the main page to begin the game</li>
+          <li>Spaceman's space craft has been overrun by enemy aliens and they've destroyed the ship...
+            Spaceman needs to take an escape pod outta there but they need energy to run... Help Spaceman
+            collect as much energy as possible so he can shoot off into the stars to safety.</li>
           <li>
-            Use the arrow keys to navigate your character around the maze,
-            collecting as many balls of energy as you can within the time limit.
-            Go get that highscore!
-          </li>
-          <li>
-            Watch out for the evil aliens! Hitting one of these guys will knock
+            In SPRINT mode you have 3 MINUTES to get off the ship. collect as much energy as you can in the time limit
+            to
+            give Spaceman the best chance of escape... WATCH OUT FOR THOSE EVIL ALIENS! Hitting one of these guys will
+            knock
             you back to the start and lose you some precious points.
           </li>
           <li>
-            Hit the start button below to practice the controls and avoiding
-            those pesky aliens.
+            In MARATHON mode you have all the time you can handle but Spaceman is not invincible... make your way round
+            the ship
+            collecting all the energy you can, but be wary... The Aliens are angry and once you've collected each lot of
+            energy
+            they're only going to get angrier... And faster... YOU ONLY HAVE 3 LIVES SO BE CAREFUL AND GOOD LUCK!
+          </li>
+
+
+         
+          <li>Hit START below to have a practice run... Once you're ready, head back to the main screen, chose between SPRINT or MARATHON by pressing the MODE button and once you're ready to go
+            hit START and begin... GO GET SPACEMAN OUTTA THERE AND GET THAT HIGHSCORE!
           </li>
         </ul>
 
@@ -1903,8 +1926,15 @@
     <div id="game-over" class="popup">
       <div class="content">
         <h1 id="go-text">GAME OVER</h1>
+        <p>you scored:</p>
         <p id="score-text"></p>
-        <div id="try-again" class="try-again">try again</div>
+        
+        <div id="try" class="bbox">
+          <div class="button-outer">
+            <button class="btn"></button>
+          </div>
+          <h2>TRY AGAIN</h2>
+        </div>
       </div>
     </div>
 
