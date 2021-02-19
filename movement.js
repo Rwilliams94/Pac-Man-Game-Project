@@ -716,33 +716,33 @@ const scorePoints = function() {
 // !---------------------------------- High scores ---------------------------------------!
 
 
-localStorage.setItem("0s", 1500)
-localStorage.setItem("1s", 1250)
-localStorage.setItem("2s",1000)
-localStorage.setItem("3s",750)
-localStorage.setItem("4s",500)
-localStorage.setItem("0m",7000)
-localStorage.setItem("1m",6000)
-localStorage.setItem("2m",5000)
-localStorage.setItem("3m",4000)
-localStorage.setItem("4m",3000)
+// localStorage.setItem("0s", 1500)
+// localStorage.setItem("1s", 1250)
+// localStorage.setItem("2s",1000)
+// localStorage.setItem("3s",750)
+// localStorage.setItem("4s",500)
+// localStorage.setItem("0m",7000)
+// localStorage.setItem("1m",6000)
+// localStorage.setItem("2m",5000)
+// localStorage.setItem("3m",4000)
+// localStorage.setItem("4m",3000)
 
 
 
 
-const highscoreMarathon = [0,0,0,0,0];
-const highscoreSprint = [0,0,0,0,0];
+const highscoreMarathon = [7000,6000,5000,4000,3000];
+const highscoreSprint = [1500,1250,1000,750,500];
 
 let marathonHighscores = document.querySelectorAll(".h-score-m")
 let sprintHighscores = document.querySelectorAll(".h-score-s")
 
-for (let i=0; i<highscoreSprint.length; i++) {
-  highscoreSprint[i] = localStorage.getItem(`${i}s`)
-}
+// for (let i=0; i<highscoreSprint.length; i++) {
+//   highscoreSprint[i] = localStorage.getItem(`${i}s`)
+// }
 
-for (let i=0; i<highscoreMarathon.length; i++) {
-  highscoreMarathon[i] = localStorage.getItem(`${i}m`)
-}
+// for (let i=0; i<highscoreMarathon.length; i++) {
+//   highscoreMarathon[i] = localStorage.getItem(`${i}m`)
+// }
 
 for (let i=0; i<highscoreSprint.length; i++) {
       
@@ -765,7 +765,7 @@ const addHighScore = function() {
     for (let i=0; i<highscoreSprint.length; i++) {
       
       sprintHighscores[i].innerText = `${highscoreSprint[i]}`
-      localStorage.setItem(`${i}s`,highscoreSprint[i])
+      // localStorage.setItem(`${i}s`,highscoreSprint[i])
       
     }
 
@@ -777,7 +777,7 @@ const addHighScore = function() {
 
     for (let i=0; i<highscoreMarathon.length; i++) {
       marathonHighscores[i].innerText = `${highscoreMarathon[i]}`
-      localStorage.setItem(`${i}m`,highscoreMarathon[i])
+      // localStorage.setItem(`${i}m`,highscoreMarathon[i])
     }
 
 
