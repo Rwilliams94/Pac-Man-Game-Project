@@ -234,6 +234,8 @@ let modeSet = 0
   // mode switcher
 
 
+
+
   let gridWalls = document.getElementsByClassName("grid-wall");
   let gridCells = document.getElementsByClassName("grid-cell");
   let up = document.getElementsByClassName("up");
@@ -263,7 +265,7 @@ let modeSet = 0
      endInterstellar();
      
     
-     console.log(btnStart.classList);
+     
  
      // resest time
      
@@ -712,6 +714,19 @@ const scorePoints = function() {
 }
 
 // !---------------------------------- High scores ---------------------------------------!
+
+
+localStorage.setItem("0s", 1500)
+localStorage.setItem("1s", 1250)
+localStorage.setItem("2s",1000)
+localStorage.setItem("3s",750)
+localStorage.setItem("4s",500)
+localStorage.setItem("0m",7000)
+localStorage.setItem("1m",6000)
+localStorage.setItem("2m",5000)
+localStorage.setItem("3m",4000)
+localStorage.setItem("4m",3000)
+
 
 
 
