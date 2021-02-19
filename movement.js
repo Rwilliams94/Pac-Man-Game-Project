@@ -473,8 +473,8 @@ resetPos()
 
 
 const startMinDec = 0;
-const startMinUni = 0;
-const startSecDec = 3;
+const startMinUni = 3;
+const startSecDec = 0;
 const startSecUni = 0;
  
 let time = startMinDec*60000 + startMinUni*6000 + startSecDec*1000 + startSecUni*100;
